@@ -22,16 +22,16 @@ console.log(recordCollection[5439].hasOwnProperty("albumTitle"))
 // Only change code below this line
 function updateRecords(records, id, prop, value) {
   console.log(records);
-  for(let key in records){
-    if(prop !=="tracks" && value !== ""){
-    records[key][prop] = value;
-    } else if (prop == "tracks" && records[key].hasOwnProperty("tracks")== false){
-    records[key][prop] = [];
-    records[key][prop].push(value);
-    } else if (prop == "tracks" && value !== ""){
-    records[key][prop].push(value);
-    } else if (value == ""){
-    delete records[key][prop]
+  for (let key in records) {
+    if (prop !== "tracks" && value !== "") {
+      records[key][prop] = value;
+    } else if (prop == "tracks" && records[key].hasOwnProperty("tracks") == false) {
+      records[key][prop] = [];
+      records[key][prop].push(value);
+    } else if (prop == "tracks" && value !== "") {
+      records[key][prop].push(value);
+    } else if (value == "") {
+      delete records[key][prop]
     }
     // console.log(key)
   }
